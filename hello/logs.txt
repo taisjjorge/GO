@@ -6,3 +6,15 @@ https://www.alura.com.br/- online:true
 https://random-status-code.herokuapp.com/- online:false
 https://www.caelum.com.br/- online:true
 https://www.globo.com- online:true
+16/08/2022 10:55:33 - https://www.alura.com.br/- online:true
+16/08/2022 10:55:39 - https://random-status-code.herokuapp.com/- online:true
+16/08/2022 10:55:46 - https://www.caelum.com.br/- online:true
+16/08/2022 10:55:51 - https://www.globo.com- online:true
+16/08/2022 11:34:15 - https://www.alura.com.br/- online:true
+16/08/2022 11:34:26 - https://random-status-code.herokuapp.com/- online:false
+16/08/2022 11:34:31 - https://www.caelum.com.br/- online:true
+16/08/2022 11:34:36 - https://www.globo.com- online:true
+16/08/2022 11:57:21 - https://www.alura.com.br/- online:true
+16/08/2022 11:57:26 - https://random-status-code.herokuapp.com/- online:false
+16/08/2022 11:57:34 - https://www.caelum.com.br/- online:true
+16/08/2022 11:57:39 - https://www.globo.com- online:true

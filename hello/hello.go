@@ -4,6 +4,7 @@ package main
 import (
 	"fmt"
 	"io"
+	"io/ioutil"
 	"strconv"
 	"strings"
 
@@ -28,7 +29,8 @@ func main() {
 		case 1:
 			initMonitoring()
 		case 2:
-			fmt.Println("Exibindo logs...")
+			fmt.Println("Exibindo logs...\n")
+			printLog()
 		case 0:
 			fmt.Println("Saindo do programa")
 			os.Exit(0)
@@ -110,12 +112,12 @@ func showNames() {
 
 func readingSites() []string {
 	var sites []string
-	filesTxt, err := os.Open("sites.txt")
+	fileTxt, err := os.Open("sites.txt")
 	if err != nil {
 		fmt.Println("Vixe! Ocorreu um erro:", err)
 	}
 
-	reader := bufio.NewReader(filesTxt)
+	reader := bufio.NewReader(fileTxt)
 	for {
 		line, err := reader.ReadString('\n')
 		line = strings.TrimSpace(line)
@@ -125,7 +127,7 @@ func readingSites() []string {
 			break
 		}
 	}
-	filesTxt.Close()
+	fileTxt.Close()
 	return sites
 }
 
@@ -136,7 +138,16 @@ func registerLogs(site string, status bool) {
 		fmt.Println(err)
 	}
 
-	fileLog.WriteString(site + "- online:" + strconv.FormatBool(status) + "\n")
+	fileLog.WriteString(time.Now().Format("02/01/2006 15:04:05") + " - " + site + "- online:" + strconv.FormatBool(status) + "\n")
 	fileLog.Close()
 
+}
+
+func printLog() {
+	file, err :=  ioutil.ReadFile("logs.txt")
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	fmt.Println(string(file))
 }
